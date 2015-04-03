@@ -1,23 +1,31 @@
 console.log("you stumble upon a dragon as you wander and attack without thinking")
 var slaying = true;
 var youHit = Math.floor(Math.random() * 2);
-var damageThisRound = Math.floor(Math.random()*5+1);
+var damageThisRound = Math.floor(Math.random() * 5 + 1);
 var totalDamage = 0;
-while(slaying){ totalDamage += damageThisRound
-    if (youHit){
-        console.log("you hit that fucker nice and did damage" +" " + damageThisRound + ". total damage for batlle is" + " " + totalDamage) 
-        var attack = prompt ("would you like to attack or run")
-        if (attack === "run") { 
-            var run = Math.floor(Math.random()*2)
-            if (run) {console.log ("you got away safe and sound");
-            slaying= false;
+while (slaying) {
+    totalDamage += damageThisRound
+    if (youHit) {
+        console.log("you hit that fucker nice and did damage" + " " + damageThisRound + ". total damage for batlle is" + " " + totalDamage)
+        var attack = prompt("would you like to attack or run");
+        if (attack === "run") {
+            var run = Math.floor(Math.random() * 2)
+            if (run) {
+                console.log("you got away safe and sound");
+                slaying = false;
             } else {
-            console.log("shit out of luck you got caught and are now BBQ")
-        slaying= false }}
-        if (totalDamage >= 4)
-        {console.log("you killed that narly beast");
-        slaying=false}
-        else {youHit = Math.floor(Math.random() * 2)}}
-            
-        else {
-            console.log("aaw shucks you just got dead")
+                console.log("shit out of luck you got caught and are now BBQ")
+                slaying = false
+            }
+        }
+        if (totalDamage >= 4) {
+            console.log("you killed that narly beast");
+            slaying = false
+        } else {
+            youHit = Math.floor(Math.random() * 2)
+        }
+    } else {
+        console.log("aaw shucks you just got dead")
+        slaying = false
+    }
+}
